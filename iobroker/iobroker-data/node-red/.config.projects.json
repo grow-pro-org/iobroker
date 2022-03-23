@@ -1,0 +1,8 @@
+{
+    "projects": {
+        "glab": {
+            "credentialSecret": false
+        }
+    },
+    "activeProject": "glab"
+}

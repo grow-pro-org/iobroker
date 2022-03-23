@@ -1,2 +1,1 @@
-# iobroker
-IO Broker
+docker run -d --restart=always --name=iobroker -p 8081:8081 -p 1880:1880 -p 8082:8082 -p 8400:8400 -p 8087:8087 -h iobroker -e LANG=en_US.UTF-8 -e LANGUAGE=en_US:en -e LC_ALL=en_US.UTF-8 -v ${PWD}/iobroker:/opt/iobroker buanet/iobroker

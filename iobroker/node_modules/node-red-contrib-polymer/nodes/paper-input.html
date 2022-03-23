@@ -1,0 +1,149 @@
+<script type="text/javascript">
+    RED.nodes.registerType('polymer_paper-input', {
+        category: 'polymer',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ''},
+            label: {value: ''},
+            'class': {value: ''},
+            attrType: {value: 'text'},
+            hasButton: {value: false},
+            raisedButton: {value: false},
+            labelButton: {value: 'Set'},
+            parent: {value: ''},
+            width: {value: '100%'},
+            height: {value: ''},
+            min: {value: ''},
+            max: {value: ''},
+            step: {value: ''},
+            maxlength: {value: ''},
+            topic: {value: ''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "ui_text.png",
+        paletteLabel: 'input',
+        label: function() { return this.name || 'input'; },
+        oneditprepare: function () {
+            var node = this;
+            var options = {};
+            RED.nodes.eachNode(function (group) {
+                if (group.type.indexOf('polymer_nav_group') === 0) {
+                    var optionText = RED.nodes.node(RED.nodes.node(RED.nodes.node(group.id).parent).parent).name + '/' +
+                        RED.nodes.node(RED.nodes.node(group.id).parent).name + '/' +
+                        group.name;
+
+                    options[optionText] = '<option value="' + group.id + '"' +
+                        (group.id === node.parent ? ' selected' : '') + '>' +
+                        optionText + '</option>';
+
+                }
+            });
+            Object.keys(options).sort().forEach(function (option) {
+                jQuery('#node-input-parent').append(options[option]);
+            });
+
+
+            $('#node-input-hasButton').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#node-input-raisedButton').removeAttr('disabled');
+                    $('#node-input-labelButton').removeAttr('disabled');
+                } else {
+                    $('#node-input-raisedButton').attr('disabled', true);
+                    $('#node-input-labelButton').attr('disabled', true);
+                }
+            });
+
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="polymer_paper-input">
+    <div class="form-row">
+        <label for="node-input-parent"><i class="fa fa-tag"></i> Parent Group</label>
+        <select id="node-input-parent">
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-label"><i class="fa fa-tag"></i> Label</label>
+        <input type="text" id="node-input-label">
+    </div>
+    <div class="form-row">
+        <label for="node-input-class"><i class="fa fa-tag"></i> Class</label>
+        <input type="text" id="node-input-class">
+    </div>
+    <div class="form-row">
+        <label for="node-input-width"><i class="fa fa-tag"></i> Width</label>
+        <input type="text" id="node-input-width">
+    </div>
+    <div class="form-row">
+        <label for="node-input-height"><i class="fa fa-tag"></i> Height</label>
+        <input type="text" id="node-input-height">
+    </div>
+    <div class="form-row">
+        <label for="node-input-attrType"><i class="fa fa-tag"></i> Type</label>
+        <select id="node-input-attrType">
+            <option value="text">Text</option>
+            <option value="password">Password</option>
+            <option value="number">Number</option>
+            <option value="time">Time</option>
+            <option value="datetime-local">Datetime</option>
+            <option value="color">Color</option>
+            <option value="email">Email</option>
+            <option value="month">Month</option>
+            <option value="tel">Tel</option>
+            <option value="url">URL</option>
+            <option value="week">Week</option>
+        </select>
+    </div>
+
+
+
+
+    <div class="form-row">
+        <label for="node-input-min"><i class="fa fa-tag"></i> Min</label>
+        <input type="text" id="node-input-min">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-max"><i class="fa fa-tag"></i> Max</label>
+        <input type="text" id="node-input-max">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-step"><i class="fa fa-tag"></i> Step</label>
+        <input type="text" id="node-input-step">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-maxlength"><i class="fa fa-tag"></i> Maxlength</label>
+        <input type="text" id="node-input-maxlength">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-hasButton"><i class="fa fa-tag"></i> Button</label>
+        <input type="checkbox" id="node-input-hasButton">
+    </div>
+    <div class="form-row">
+        <label for="node-input-labelButton"><i class="fa fa-tag"></i> Button Label</label>
+        <input type="text" id="node-input-labelButton">
+    </div>
+    <div class="form-row">
+        <label for="node-input-raisedButton"><i class="fa fa-tag"></i> Button Raised</label>
+        <input type="checkbox" id="node-input-raisedButton">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="polymer_paper-input">
+
+</script>

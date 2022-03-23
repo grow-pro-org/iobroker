@@ -1,0 +1,6 @@
+Installer version: 2021-11-18
+Installation date 2021-12-17
+Platform: linux
+init system: unknown
+Autostart: false
+ACL enabled: true

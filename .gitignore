@@ -1,0 +1,7 @@
+*.log
+*.log.gz
+iobroker-audit.json
+iobroker.bak
+states.*
+objects.json.bak
+

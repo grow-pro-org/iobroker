@@ -1,0 +1,119 @@
+<script type="text/javascript">
+    RED.nodes.registerType('polymer_paper-slider', {
+        category: 'polymer',
+        color: '#a6bbcf',
+        defaults: {
+            element: {value: 'polymer_paper-slider', required: true},
+            name: {value: ''},
+            html: {value: ''},
+            'class': {value: ''},
+            immediate: {value: false},
+            pin: {value: null},
+            editable: {value: null},
+            snaps: {value: null},
+            min: {value: 0},
+            max: {value: 100},
+            step: {value: 1},
+            maxMarkers: {value: 0},
+            parent: {value: ''},
+            width: {value: '100%'},
+            height: {value: ''},
+            topic: {value: ''}
+
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "ui_slider.png",
+        paletteLabel: 'slider',
+        label: function() { return this.name || 'slider'; },
+        oneditprepare: function () {
+            var node = this;
+            var options = {};
+            RED.nodes.eachNode(function (group) {
+                if (group.type.indexOf('polymer_nav_group') === 0) {
+                    var optionText = RED.nodes.node(RED.nodes.node(RED.nodes.node(group.id).parent).parent).name + '/' +
+                        RED.nodes.node(RED.nodes.node(group.id).parent).name + '/' +
+                        group.name;
+
+                    options[optionText] = '<option value="' + group.id + '"' +
+                        (group.id === node.parent ? ' selected' : '') + '>' +
+                        optionText + '</option>';
+
+                }
+            });
+            Object.keys(options).sort().forEach(function (option) {
+                jQuery('#node-input-parent').append(options[option]);
+            });
+        }
+
+    });
+</script>
+
+<script type="text/x-red" data-template-name="polymer_paper-slider">
+    <div class="form-row">
+        <label for="node-input-parent"><i class="fa fa-tag"></i> Parent Group</label>
+        <select id="node-input-parent">
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-class"><i class="fa fa-tag"></i> Class</label>
+        <input type="text" id="node-input-class">
+    </div>
+    <div class="form-row">
+        <label for="node-input-width"><i class="fa fa-tag"></i> Width</label>
+        <input type="text" id="node-input-width">
+    </div>
+    <div class="form-row">
+        <label for="node-input-height"><i class="fa fa-tag"></i> Height</label>
+        <input type="text" id="node-input-height">
+    </div>
+    <div class="form-row">
+        <label for="node-input-html"><i class="fa fa-tag"></i> Label</label>
+        <input type="text" id="node-input-html">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-min"><i class="fa fa-tag"></i> Min</label>
+        <input type="number" id="node-input-min">
+    </div>
+    <div class="form-row">
+        <label for="node-input-max"><i class="fa fa-tag"></i> Max</label>
+        <input type="number" id="node-input-max">
+    </div>
+    <div class="form-row">
+        <label for="node-input-maxMarkers"><i class="fa fa-tag"></i> Max Markers</label>
+        <input type="number" id="node-input-maxMarkers">
+    </div>
+    <div class="form-row">
+        <label for="node-input-step"><i class="fa fa-tag"></i> Step</label>
+        <input type="number" id="node-input-step">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pin"><i class="fa fa-tag"></i> Pin</label>
+        <input type="checkbox" id="node-input-pin">
+    </div>
+    <div class="form-row">
+        <label for="node-input-snaps"><i class="fa fa-tag"></i> Snaps</label>
+        <input type="checkbox" id="node-input-snaps">
+    </div>
+    <div class="form-row">
+        <label for="node-input-editable"><i class="fa fa-tag"></i> Editable</label>
+        <input type="checkbox" id="node-input-editable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-immediate"><i class="fa fa-tag"></i> Immediate</label>
+        <input type="checkbox" id="node-input-immediate">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="polymer_paper-slider">
+
+</script>

@@ -1,0 +1,29 @@
+{
+  "name": "iobroker.inst",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Automate your Life",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "iobroker.admin": "^5.2.3",
+    "iobroker.backitup": "stable",
+    "iobroker.discovery": "stable",
+    "iobroker.echarts": "^1.0.3",
+    "iobroker.fullcalendar": "^1.1.0",
+    "iobroker.history": "^1.9.14",
+    "iobroker.influxdb": "^1.9.5",
+    "iobroker.jarvis": "^3.0.11",
+    "iobroker.javascript": "^5.2.13",
+    "iobroker.js-controller": "^3.3.22",
+    "iobroker.mqtt": "^2.4.0",
+    "iobroker.node-red": "^2.4.1",
+    "iobroker.scenes": "^2.3.8",
+    "iobroker.terminal": "^0.1.2",
+    "iobroker.vis": "^1.4.5",
+    "iobroker.vis-icontwo": "^0.84.0",
+    "iobroker.vis-inventwo": "^3.2.0",
+    "iobroker.web": "^3.4.9"
+  }
+}

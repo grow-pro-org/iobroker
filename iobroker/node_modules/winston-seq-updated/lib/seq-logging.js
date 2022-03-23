@@ -1,0 +1,8 @@
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+/** Init */
+/** @todo */
+// tslint:disable-next-line: variable-name
+var SeqLogger = require('seq-logging').Logger;
+exports.default = SeqLogger;
+//# sourceMappingURL=seq-logging.js.map

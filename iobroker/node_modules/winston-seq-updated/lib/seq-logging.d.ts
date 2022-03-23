@@ -1,0 +1,29 @@
+/** Interfaces */
+export interface ISeqLoggerConfig {
+    serverUrl?: string;
+    apiKey?: string;
+    maxBatchingTime?: number;
+    eventSizeLimit?: number;
+    batchSizeLimit?: number;
+    onError?: (err: Error) => void;
+}
+export declare type ISeqLevels = 'Verbose' | 'Debug' | 'Information' | 'Warning' | 'Error' | 'Fatal';
+export interface ISeqEvent {
+    timestamp?: Date;
+    level?: ISeqLevels;
+    messageTemplate?: string;
+    exception?: string;
+    properties?: {
+        [key: string]: any;
+    };
+}
+export interface ISeqLogger {
+    close(): Promise<boolean>;
+    flush(): Promise<boolean>;
+    emit(event: ISeqEvent): void;
+}
+export interface ISeqLoggerStatic {
+    new (config?: ISeqLoggerConfig): ISeqLogger;
+}
+declare const _default: ISeqLoggerStatic;
+export default _default;

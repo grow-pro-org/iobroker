@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" = "fix" ]; then
+curl -sL https://iobroker.net/fix.sh | bash -
+else
+gosu iobroker node /opt/iobroker/node_modules/iobroker.js-controller/iobroker.js "$@"
+fi
