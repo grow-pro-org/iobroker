@@ -4,4 +4,4 @@ iobroker-audit.json
 iobroker.bak
 states.*
 objects.json.bak
-
+*states.json.gz
