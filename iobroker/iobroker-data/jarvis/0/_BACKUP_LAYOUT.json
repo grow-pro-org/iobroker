@@ -1,3 +1,0 @@
-{
-   "2022-03-24_14-45-16": "{\"version\":3,\"layout\":[{\"id\":\"2bbbe067-7506-4fac-8a1f-bfbf9f48a9e7\",\"type\":\"page\",\"icon\":\"mdi-view-dashboard-variant\",\"title\":\"Overview\",\"tabs\":[{\"icon\":\"mdi-desktop-mac-dashboard\",\"title\":\"Dashboard\",\"id\":\"674d30a6-83d8-4876-9135-55791d7dfec9\",\"widgetsDesktop\":[{\"x\":0,\"y\":0,\"w\":4,\"h\":11,\"i\":\"62bbb595-907c-41e6-b6f9-a0436ac2ccea\",\"moved\":false,\"items\":[\"cf038502-ce2f-465d-b763-a881d0c0cbeb\"]},{\"x\":4,\"y\":0,\"w\":8,\"h\":11,\"i\":\"ac3867ac-d555-48b1-87f2-2133f0ab0591\",\"moved\":false,\"items\":[\"29292dbc-4449-4a69-b187-0f59ad0c8266\"]}],\"widgetsSmartphone\":[],\"revision\":\"cec7a\"}]}]}"
-}

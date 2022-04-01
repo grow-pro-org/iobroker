@@ -3,10 +3,14 @@
 iobroker-audit.json
 iobroker.bak
 states.*
-objects.json.bak
+*objects.json.bak
+*ojbects.json.gz
 *states.json.bak
+*states.json.gz
 *BACKUP_DEVICES.json
 *BACKUP_LAYOUT.json
 *BACKUP_SETTINGS.json
 *BACKUP_WIDGETS.json
+*BACKUP_STYLES.json
+*pids.txt
 
