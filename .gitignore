@@ -13,4 +13,4 @@ states.*
 *BACKUP_WIDGETS.json
 *BACKUP_STYLES.json
 *pids.txt
-
+iobroker/.npm/*

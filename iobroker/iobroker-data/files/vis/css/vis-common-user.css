@@ -1,0 +1,12 @@
+
+#visview_Main {
+    background-image: url(/vis.0/main/img/background_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.gp_background_1 {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px 5px 2px #3D3D3D;
+}
